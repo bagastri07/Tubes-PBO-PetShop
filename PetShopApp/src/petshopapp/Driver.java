@@ -20,8 +20,7 @@ public class Driver {
     public static void main(String[] args) throws SQLException {
         // TODO code application logic here
         Database a = new Database();
-        a.connect();
-        a.disconnect();
+        
     }
     
 }
