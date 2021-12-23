@@ -5,6 +5,9 @@
  */
 package petshopapp;
 
+import Database.Database;
+import java.sql.SQLException;
+
 /**
  *
  * @author bagas
@@ -14,9 +17,11 @@ public class Driver {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // TODO code application logic here
-        System.out.println("Hello World!");
+        Database a = new Database();
+        a.connect();
+        a.disconnect();
     }
     
 }
