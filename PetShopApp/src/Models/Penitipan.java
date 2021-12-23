@@ -9,12 +9,12 @@ package Models;
  *
  * @author bagas
  */
-public class Grooming implements MetodePembayaran{
+public class Penitipan {
     private String nama;
-    private  Pelanggan pelanggan;
+    private Pelanggan pelanggan;
     private HewanPeliharaan hewan;
 
-    public Grooming(String nama, Pelanggan pelanggan, HewanPeliharaan hewan) {
+    public Penitipan(String nama, Pelanggan pelanggan, HewanPeliharaan hewan) {
         this.nama = nama;
         this.pelanggan = pelanggan;
         this.hewan = hewan;
@@ -43,16 +43,4 @@ public class Grooming implements MetodePembayaran{
     public HewanPeliharaan getHewan() {
         return hewan;
     }
-
-    @Override
-    public void bayarDgnGopay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void bayarDgnTunai() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }
