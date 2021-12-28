@@ -20,6 +20,7 @@ public class CtrlMenuPelanggan {
         viewMenu = new ViewMenuPelanggan();
         
         viewMenu.addActionKembali(new KembaliListener());
+        viewMenu.addActionDaftarPelanngan(new DaftarPelangganListener());
         
         viewMenu.setVisible(true);
         viewMenu.setLocationRelativeTo(null);
@@ -27,14 +28,18 @@ public class CtrlMenuPelanggan {
     }
     
     class KembaliListener implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
             CtrlBeranda beranda = new CtrlBeranda();
             viewMenu.dispose();
+        }   
+    }
+    
+    class DaftarPelangganListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            CtrlDaftarPelanggan daftarPelanggan = new CtrlDaftarPelanggan();
+            viewMenu.dispose();
         }
-    
-}
-    
-    
+    }
 }

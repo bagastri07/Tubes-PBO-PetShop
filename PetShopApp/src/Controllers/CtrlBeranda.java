@@ -33,8 +33,7 @@ public class CtrlBeranda {
         public void actionPerformed(ActionEvent ae) {
             CtrlLogin login = new CtrlLogin();
             viewBeranda.dispose();
-        }
-         
+        }   
      }
      class MPelangganListener implements ActionListener{
 
@@ -42,8 +41,6 @@ public class CtrlBeranda {
         public void actionPerformed(ActionEvent e) {
             CtrlMenuPelanggan menuPelanggan = new CtrlMenuPelanggan();
             viewBeranda.dispose();
-            
-        }
-         
+        }   
      }
 }
