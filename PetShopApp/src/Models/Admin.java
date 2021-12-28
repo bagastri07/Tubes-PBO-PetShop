@@ -10,36 +10,46 @@ package Models;
  * @author bagas
  */
 public class Admin {
-    private String idAdmin, nama, telepon;
+    private int id;
+    private String username, password, nama;
 
-    public Admin(String idAdmin, String nama, String telepon) {
-        this.idAdmin = idAdmin;
+    public Admin(int id, String username, String password, String nama) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
         this.nama = nama;
-        this.telepon = telepon;
     }
 
-    public String getIdAdmin() {
-        return idAdmin;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setIdAdmin(String idAdmin) {
-        this.idAdmin = idAdmin;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getNama() {
-        return nama;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setNama(String nama) {
         this.nama = nama;
     }
 
-    public String getTelepon() {
-        return telepon;
+    public int getId() {
+        return id;
     }
 
-    public void setTelepon(String telepon) {
-        this.telepon = telepon;
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getNama() {
+        return nama;
     }
     
     
