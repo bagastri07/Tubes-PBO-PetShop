@@ -6,6 +6,8 @@
 package Controllers;
 
 import Views.ViewMenuPelanggan;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -17,12 +19,22 @@ public class CtrlMenuPelanggan {
     public CtrlMenuPelanggan() {
         viewMenu = new ViewMenuPelanggan();
         
-        //.addActionKeluar(new KeluarListener());
+        viewMenu.addActionKembali(new KembaliListener());
         
         viewMenu.setVisible(true);
         viewMenu.setLocationRelativeTo(null);
         viewMenu.setTitle("Menu Pelanggan");
     }
+    
+    class KembaliListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CtrlBeranda beranda = new CtrlBeranda();
+            viewMenu.dispose();
+        }
+    
+}
     
     
 }

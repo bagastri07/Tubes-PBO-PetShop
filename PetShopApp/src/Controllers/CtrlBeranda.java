@@ -20,6 +20,7 @@ public class CtrlBeranda {
         viewBeranda = new ViewBeranda();
         
         viewBeranda.addActionKeluar(new KeluarListener());
+        viewBeranda.addActionMenuPelanggan(new MPelangganListener());
         
         viewBeranda.setVisible(true);
         viewBeranda.setLocationRelativeTo(null);
