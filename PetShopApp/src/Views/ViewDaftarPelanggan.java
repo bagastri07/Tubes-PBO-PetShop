@@ -57,6 +57,9 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
         labelNomor.setText("Nomor Telepon");
 
         labelAlamat.setText("Alamat");
+        labelAlamat.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelAlamat.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelAlamat.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,8 +78,8 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
                         .addComponent(btnKembali))
                     .addComponent(labelNama)
                     .addComponent(labelNomor)
-                    .addComponent(labelAlamat))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(labelAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +87,7 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnKembali)
                             .addComponent(btnUbah))
@@ -95,8 +98,8 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelNomor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelAlamat)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(labelAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -174,7 +177,7 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
     }
     
     public void setLabelAlamat(String alamat) {
-        labelAlamat.setText(alamat);
+        labelAlamat.setText("<html>"+alamat+"</html>");
     } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
