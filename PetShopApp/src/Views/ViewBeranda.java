@@ -33,6 +33,7 @@ public class ViewBeranda extends javax.swing.JFrame {
         btnGrooming = new javax.swing.JButton();
         btnKeluar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnPelanggan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +45,8 @@ public class ViewBeranda extends javax.swing.JFrame {
 
         jLabel1.setText("Beranda");
 
+        btnPelanggan.setText("Menu Pelanggan");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -52,9 +55,10 @@ public class ViewBeranda extends javax.swing.JFrame {
                 .addContainerGap(141, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGrooming, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnPenitipan, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnGrooming, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnPenitipan, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnPelanggan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(134, 134, 134))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnKeluar)
@@ -68,13 +72,15 @@ public class ViewBeranda extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(58, 58, 58)
+                .addGap(60, 60, 60)
+                .addComponent(btnPelanggan)
+                .addGap(15, 15, 15)
                 .addComponent(btnGrooming)
                 .addGap(18, 18, 18)
                 .addComponent(btnPenitipan)
                 .addGap(18, 18, 18)
                 .addComponent(btnKeluar)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,6 +128,7 @@ public class ViewBeranda extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGrooming;
     private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnPelanggan;
     private javax.swing.JButton btnPenitipan;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

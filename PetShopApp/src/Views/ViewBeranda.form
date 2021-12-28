@@ -27,9 +27,10 @@
               <EmptySpace pref="141" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnGrooming" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnGrooming" alignment="1" max="32767" attributes="0"/>
                           <Component id="btnPenitipan" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnPelanggan" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                   </Group>
@@ -50,13 +51,15 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Component id="btnPelanggan" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="btnGrooming" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnPenitipan" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnKeluar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -80,6 +83,11 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Beranda"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPelanggan">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Menu Pelanggan"/>
       </Properties>
     </Component>
   </SubComponents>
