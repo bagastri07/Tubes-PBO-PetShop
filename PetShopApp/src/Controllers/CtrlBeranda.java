@@ -35,4 +35,13 @@ public class CtrlBeranda {
         }
          
      }
+     class MPelangganListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CtrlMenuPelanggan menuPelanggan = new CtrlMenuPelanggan();
+            viewBeranda.dispose();
+        }
+         
+     }
 }
