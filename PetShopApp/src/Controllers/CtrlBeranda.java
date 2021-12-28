@@ -41,6 +41,7 @@ public class CtrlBeranda {
         public void actionPerformed(ActionEvent e) {
             CtrlMenuPelanggan menuPelanggan = new CtrlMenuPelanggan();
             viewBeranda.dispose();
+            
         }
          
      }
