@@ -40,6 +40,7 @@ public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaAlamat = new javax.swing.JTextArea();
         labelIDPelanggan = new javax.swing.JLabel();
+        btnKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +73,8 @@ public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
 
         labelIDPelanggan.setText("    ");
 
+        btnKembali.setText("Kembali");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,7 +93,10 @@ public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnSubmit)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSubmit)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnKembali))
                             .addComponent(fieldNama)
                             .addComponent(fieldNomorTelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(jScrollPane1))))
@@ -116,7 +122,9 @@ public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(btnSubmit)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit)
+                    .addComponent(btnKembali))
                 .addGap(41, 41, 41))
         );
 
@@ -216,6 +224,7 @@ public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKembali;
     private javax.swing.JToggleButton btnSubmit;
     private javax.swing.JTextField fieldNama;
     private javax.swing.JTextField fieldNomorTelepon;
