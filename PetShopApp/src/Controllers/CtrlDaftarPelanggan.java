@@ -35,6 +35,7 @@ public class CtrlDaftarPelanggan {
         viewDaftarPelanggan.addMouseListPegawai(new DetailPelangganMouseAdapter());
         viewDaftarPelanggan.addPelangganList(getDaftarPelanggan());
         viewDaftarPelanggan.addActionHapusPelanggan(new HapusPelangganListener());
+        viewDaftarPelanggan.addActionUbahPelanggan(new UbahPelangganListener());
         
         viewDaftarPelanggan.setVisible(true);
         viewDaftarPelanggan.setLocationRelativeTo(null);
@@ -87,12 +88,13 @@ public class CtrlDaftarPelanggan {
                     Database db = new Database();
                     String sql = "DELETE FROM pelanggan WHERE id = " + idPegawai;
                     db.query(sql);
+                    viewDaftarPelanggan.DipslayMessage("Pelanggan dengan id " + idPegawai + " berhasil dihapus");
+                    CtrlMenuPelanggan menuPelanngan = new CtrlMenuPelanggan();
+                    viewDaftarPelanggan.dispose();
                 } catch (Exception e) {
-
+                    viewDaftarPelanggan.DipslayMessage(e.getMessage());
                 }
-                viewDaftarPelanggan.DipslayMessage("Pelanggan dengan id " + idPegawai + "berhasil dihapus");
-                CtrlMenuPelanggan menuPelanngan = new CtrlMenuPelanggan();
-                viewDaftarPelanggan.dispose();
+                
             }
             
         }
@@ -110,5 +112,27 @@ public class CtrlDaftarPelanggan {
                 }
             }
         }
-    }    
+    }
+
+    class UbahPelangganListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            JList jListPelanggan = viewDaftarPelanggan.getListPelanggan();
+            if (jListPelanggan.isSelectionEmpty()) {
+                viewDaftarPelanggan.DipslayMessage("Anda Belum Memilih Pelanggan");
+            } else {
+                CtrlTambahUbahPelanggan ubahPelanggan = new CtrlTambahUbahPelanggan();
+                ubahPelanggan.setJudulPanel("Ubah Pelanggan");
+                //setData Pelanggan
+                for(Pelanggan e : listPelanggan) {
+                    if (e.getNama() == jListPelanggan.getSelectedValue()) {
+                        String idPelangan = String.valueOf(e.getId());
+                        ubahPelanggan.SetDataUbahPelanggan(idPelangan, e.getNama(), e.getNomorTelepon(), e.getAlamat());
+                    }
+                }
+                
+                viewDaftarPelanggan.dispose();
+            }
+        }
+    }
 }

@@ -168,6 +168,10 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
         btnHapus.addActionListener(listener);
     }
     
+    public void addActionUbahPelanggan(ActionListener listener) {
+        btnUbah.addActionListener(listener);
+    }
+    
     public void setLabelNama(String nama) {
         labelNama.setText(nama);
     }

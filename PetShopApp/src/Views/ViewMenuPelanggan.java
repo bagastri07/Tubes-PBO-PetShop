@@ -119,6 +119,10 @@ public class ViewMenuPelanggan extends javax.swing.JFrame {
     public void addActionDaftarPelanngan(ActionListener listener) {
         btnDaftarPelanggan.addActionListener(listener);
     }
+    
+    public void addActionTambahPelanggan(ActionListener listener) {
+        btnTambahPelanggan.addActionListener(listener);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDaftarPelanggan;
     private javax.swing.JButton btnKembali;

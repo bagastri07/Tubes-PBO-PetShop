@@ -29,20 +29,11 @@ public class Database {
         }
     }
     
-    public ResultSet getData(String SQLString) {
-        try {
-            rs = stmt.executeQuery(SQLString);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        
+    public ResultSet getData(String SQLString) throws SQLException {
+        rs = stmt.executeQuery(SQLString);
         return rs;
     }
-    public void query(String SQLString) {
-        try {
-            stmt.executeUpdate(SQLString);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+    public void query(String SQLString) throws SQLException {
+        stmt.executeUpdate(SQLString);
     }
 }

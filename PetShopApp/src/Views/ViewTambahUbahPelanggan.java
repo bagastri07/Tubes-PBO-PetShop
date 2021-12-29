@@ -5,16 +5,19 @@
  */
 package Views;
 
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Farrel
  */
-public class ViewTambahUbah extends javax.swing.JFrame {
+public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewTambahUbah
      */
-    public ViewTambahUbah() {
+    public ViewTambahUbahPelanggan() {
         initComponents();
     }
 
@@ -32,8 +35,11 @@ public class ViewTambahUbah extends javax.swing.JFrame {
         fieldNomorTelepon = new javax.swing.JTextField();
         fieldNama = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        fieldAlamat = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JToggleButton();
+        labelJudul = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaAlamat = new javax.swing.JTextArea();
+        labelIDPelanggan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,14 +47,12 @@ public class ViewTambahUbah extends javax.swing.JFrame {
 
         jLabel2.setText("Nomor Telepon");
 
-        fieldNomorTelepon.setText("     ");
         fieldNomorTelepon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldNomorTeleponActionPerformed(evt);
             }
         });
 
-        fieldNama.setText("     ");
         fieldNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldNamaActionPerformed(evt);
@@ -57,33 +61,49 @@ public class ViewTambahUbah extends javax.swing.JFrame {
 
         jLabel3.setText("Alamat");
 
-        fieldAlamat.setText("     ");
-
         btnSubmit.setText("Submit");
+
+        labelJudul.setText("Judul");
+
+        textAreaAlamat.setColumns(20);
+        textAreaAlamat.setLineWrap(true);
+        textAreaAlamat.setRows(5);
+        jScrollPane1.setViewportView(textAreaAlamat);
+
+        labelIDPelanggan.setText("    ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSubmit)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(fieldNama)
-                        .addComponent(fieldNomorTelepon)
-                        .addComponent(fieldAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelIDPelanggan)
+                        .addGap(103, 103, 103)
+                        .addComponent(labelJudul))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnSubmit)
+                            .addComponent(fieldNama)
+                            .addComponent(fieldNomorTelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelJudul)
+                    .addComponent(labelIDPelanggan))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(fieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -93,11 +113,9 @@ public class ViewTambahUbah extends javax.swing.JFrame {
                     .addComponent(fieldNomorTelepon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(fieldAlamat, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
-                .addGap(50, 50, 50)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
                 .addGap(41, 41, 41))
         );
@@ -130,31 +148,83 @@ public class ViewTambahUbah extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewTambahUbah.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTambahUbahPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewTambahUbah.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTambahUbahPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewTambahUbah.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTambahUbahPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewTambahUbah.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTambahUbahPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewTambahUbah().setVisible(true);
+                new ViewTambahUbahPelanggan().setVisible(true);
             }
         });
+    }
+    
+    public void setLabelJudul(String judul) {
+       labelJudul.setText(judul);
+    }
+    
+    public String getLabelJudul() {
+        return labelJudul.getText();
+    }
+    
+    public String getFieldNamaPelanggan() {
+        return fieldNama.getText();
+    }
+    
+    public String getFieldNoTeleponPelanggan() {
+        return fieldNomorTelepon.getText();
+    }
+    
+    public String getFieldAlamatPelanggan() {
+        return textAreaAlamat.getText();
+    }
+    
+    public String getLabelIDPelanggan() {
+        return labelIDPelanggan.getText();
+    }
+    
+    public void setFieldNamaPelanggan(String nama) {
+        fieldNama.setText(nama);
+    }
+    
+    public void setFielNomorTeleponPelanggan(String noTelepon) {
+        fieldNomorTelepon.setText(noTelepon);
+    }
+    
+    public void setFieldAlamatPelanggan(String alamat) {
+        textAreaAlamat.setText(alamat);
+    }
+    
+    public void setLabelIdPelanggan(String id) {
+        labelIDPelanggan.setText(id);
+    }
+    
+    public void addActionSubmit(ActionListener listener) {
+        btnSubmit.addActionListener(listener);
+    }
+    
+     public void DipslayMessage(String S) {
+        JOptionPane.showMessageDialog(this, S);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnSubmit;
-    private javax.swing.JTextField fieldAlamat;
     private javax.swing.JTextField fieldNama;
     private javax.swing.JTextField fieldNomorTelepon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelIDPelanggan;
+    private javax.swing.JLabel labelJudul;
+    private javax.swing.JTextArea textAreaAlamat;
     // End of variables declaration//GEN-END:variables
 }

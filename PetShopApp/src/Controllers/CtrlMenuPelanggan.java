@@ -21,6 +21,7 @@ public class CtrlMenuPelanggan {
         
         viewMenu.addActionKembali(new KembaliListener());
         viewMenu.addActionDaftarPelanngan(new DaftarPelangganListener());
+        viewMenu.addActionTambahPelanggan(new TambahPelangganListener());
         
         viewMenu.setVisible(true);
         viewMenu.setLocationRelativeTo(null);
@@ -39,6 +40,15 @@ public class CtrlMenuPelanggan {
         @Override
         public void actionPerformed(ActionEvent ae) {
             CtrlDaftarPelanggan daftarPelanggan = new CtrlDaftarPelanggan();
+            viewMenu.dispose();
+        }
+    }
+    
+    class TambahPelangganListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            CtrlTambahUbahPelanggan tambahPelanggan = new CtrlTambahUbahPelanggan();
+            tambahPelanggan.setJudulPanel("Tambah Pelanggan");
             viewMenu.dispose();
         }
     }
