@@ -37,33 +37,24 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         dropDownPelanggan = new javax.swing.JComboBox<>();
         dropDownHewan = new javax.swing.JComboBox<>();
-        fieldNamaHewan = new javax.swing.JTextField();
-        radioButtonJantan = new javax.swing.JRadioButton();
-        radioButtonBetina = new javax.swing.JRadioButton();
-        fieldUsiaHewan = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         dropDownLayanan = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
+<<<<<<< HEAD
         btnKembali = new javax.swing.JButton();
         btnSubmit = new javax.swing.JButton();
+=======
+        btnSubmit = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
+>>>>>>> f688c19db6f6d0b402a6bc4661a90568a76141b6
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Pelanggan");
 
-        jLabel2.setText("Hewan");
-
-        jLabel3.setText("Nama");
-
-        jLabel4.setText("Jenis Kelamin");
-
-        jLabel5.setText("Usia");
+        jLabel2.setText("Pilih Hewan");
 
         jLabel6.setText("Layanan");
 
@@ -71,30 +62,46 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
 
         dropDownHewan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anjing", "Kucing" }));
 
-        buttonGroup1.add(radioButtonJantan);
-        radioButtonJantan.setText("Jantan");
-
-        buttonGroup1.add(radioButtonBetina);
-        radioButtonBetina.setText("Betina");
-
-        jLabel7.setText("Bulan");
-
         dropDownLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mandi Hewan", "Membersihkan Kutu", "Memberssihkan Kuku" }));
 
         jLabel8.setText("Layanan Grooming");
 
+<<<<<<< HEAD
         btnKembali.setText("Kembali");
 
         btnSubmit.setText("Submit");
 
+=======
+        btnSubmit.setText("Submit");
+
+        btnKembali.setText("Kembali");
+
+>>>>>>> f688c19db6f6d0b402a6bc4661a90568a76141b6
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(dropDownPelanggan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dropDownHewan, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dropDownLayanan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
+>>>>>>> f688c19db6f6d0b402a6bc4661a90568a76141b6
             .addGroup(layout.createSequentialGroup()
                 .addGap(147, 147, 147)
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,13 +137,25 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
                     .addGap(122, 122, 122)
                     .addComponent(btnSubmit)
                     .addContainerGap(206, Short.MAX_VALUE)))
+=======
+            .addGroup(layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(btnSubmit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnKembali)
+                .addGap(70, 70, 70))
+>>>>>>> f688c19db6f6d0b402a6bc4661a90568a76141b6
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
+<<<<<<< HEAD
                 .addGap(18, 18, 18)
+=======
+                .addGap(58, 58, 58)
+>>>>>>> f688c19db6f6d0b402a6bc4661a90568a76141b6
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(dropDownPelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,25 +165,17 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
                     .addComponent(dropDownHewan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(fieldNamaHewan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(radioButtonJantan)
-                    .addComponent(radioButtonBetina))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(fieldUsiaHewan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(dropDownLayanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(btnKembali)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit)
+                    .addComponent(btnKembali))
+>>>>>>> f688c19db6f6d0b402a6bc4661a90568a76141b6
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -230,17 +241,9 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> dropDownHewan;
     private javax.swing.JComboBox<String> dropDownLayanan;
     private javax.swing.JComboBox<String> dropDownPelanggan;
-    private javax.swing.JTextField fieldNamaHewan;
-    private javax.swing.JTextField fieldUsiaHewan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JRadioButton radioButtonBetina;
-    private javax.swing.JRadioButton radioButtonJantan;
     // End of variables declaration//GEN-END:variables
 }
