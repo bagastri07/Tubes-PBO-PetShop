@@ -24,9 +24,9 @@ public class CtrlMenuGrooming {
 
     public CtrlMenuGrooming() {
         viewGrooming = new ViewMenuGrooming();
-//        
-//        viewGrooming.addActionKembali(new KembaliListener());
-//        viewGrooming.setPelangganDropDown(getDaftarPelanggan());
+        
+        viewGrooming.addActionKembali(new KembaliListener());
+        viewGrooming.setPelangganDropDown(getDaftarPelanggan());
         
         viewGrooming.setVisible(true);
         viewGrooming.setLocationRelativeTo(null);
@@ -44,7 +44,7 @@ public class CtrlMenuGrooming {
                 cbm.addElement(pelangganWithId);
             }
         } catch (Exception e) {
-//            viewGrooming.DipslayMessage(e.getMessage());
+            viewGrooming.DipslayMessage(e.getMessage());
         }
         return cbm;
     }
