@@ -144,7 +144,7 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
         return listPelanggan;
     }
     
-    public void addPelangganList(ListModel<String> value) {
+    public void setPelangganList(ListModel<String> value) {
         listPelanggan.setModel(value);
     }
     

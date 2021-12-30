@@ -22,6 +22,7 @@ public class CtrlTambahUbahPelanggan {
         viewTambahUbah = new ViewTambahUbahPelanggan();
         
         viewTambahUbah.addActionSubmit(new SubmitPelangganBaruListener());
+        viewTambahUbah.addActionKembali(new KembaliListener());
         
         viewTambahUbah.setVisible(true);
         viewTambahUbah.setLocationRelativeTo(null);
@@ -33,7 +34,7 @@ public class CtrlTambahUbahPelanggan {
     }
     
     public void SetDataUbahPelanggan(String id, String nama, String noTelepon, String alamat) {
-        viewTambahUbah.setLabelIdPelanggan("ID: " + id);
+        viewTambahUbah.setLabelIdPelanggan(id);
         viewTambahUbah.setFieldNamaPelanggan(nama);
         viewTambahUbah.setFielNomorTeleponPelanggan(noTelepon);
         viewTambahUbah.setFieldAlamatPelanggan(alamat);
@@ -42,11 +43,12 @@ public class CtrlTambahUbahPelanggan {
     class SubmitPelangganBaruListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
-            //getData Pelanggan
-            String nama = viewTambahUbah.getFieldNamaPelanggan();  
-            String nomorTelepon = viewTambahUbah.getFieldNoTeleponPelanggan();
-            String alamat = viewTambahUbah.getFieldAlamatPelanggan();
             try {
+                //getData Pelanggan
+                String nama = viewTambahUbah.getFieldNamaPelanggan();  
+                String nomorTelepon = viewTambahUbah.getFieldNoTeleponPelanggan();
+                String alamat = viewTambahUbah.getFieldAlamatPelanggan();
+                System.out.println(alamat+"1");
                 Database db = new Database();
                 String SQL;
                 if (viewTambahUbah.getLabelJudul() == "Tambah Pelanggan") {
@@ -54,10 +56,20 @@ public class CtrlTambahUbahPelanggan {
                         + "VALUES (NULL, '%s', '%s', '%s') ", nama, nomorTelepon, alamat);
                     db.query(SQL);
                     viewTambahUbah.DipslayMessage(nama + " Berhasil ditambahkan");
-                    CtrlMenuPelanggan menuPelanngan = new CtrlMenuPelanggan();
-                    viewTambahUbah.dispose();
-                } else {
                     
+                } else if (viewTambahUbah.getLabelJudul() == "Ubah Pelanggan") {
+                    String idPelanggan = viewTambahUbah.getLabelIDPelanggan();
+                    SQL = String.format("UPDATE pelanggan"
+                            + " SET nama = '%s', nomorTelepon = '%s', alamat = '%s'"
+                            + " WHERE id = %s;", nama, nomorTelepon, alamat, idPelanggan);
+                    System.out.println(SQL);
+                    db.query(SQL);
+                    
+                    viewTambahUbah.DipslayMessage("Pelanggan dengan id " + idPelanggan + " Berhasil diubah");
+                }
+                //Change Panel
+ {              CtrlMenuPelanggan menuPelanngan = new CtrlMenuPelanggan();
+                viewTambahUbah.dispose();
                 }
             } catch (Exception e) {
                 viewTambahUbah.DipslayMessage(e.getMessage());
@@ -71,5 +83,13 @@ public class CtrlTambahUbahPelanggan {
         public void actionPerformed(ActionEvent ae) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
+    }
+    
+    class KembaliListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CtrlMenuPelanggan menuPelanngan = new CtrlMenuPelanggan();
+            viewTambahUbah.dispose();
+        }   
     }
 }

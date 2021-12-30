@@ -5,6 +5,7 @@
  */
 package Views;
 
+import Exeptions.EmptyExeption;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
@@ -183,15 +184,24 @@ public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
         return labelJudul.getText();
     }
     
-    public String getFieldNamaPelanggan() {
+    public String getFieldNamaPelanggan() throws EmptyExeption {
+        if ("".equals(fieldNama.getText())) {
+            throw new EmptyExeption();
+        }
         return fieldNama.getText();
     }
     
-    public String getFieldNoTeleponPelanggan() {
+    public String getFieldNoTeleponPelanggan() throws EmptyExeption {
+        if ("".equals(fieldNomorTelepon.getText())) {
+            throw new EmptyExeption();
+        }
         return fieldNomorTelepon.getText();
     }
     
-    public String getFieldAlamatPelanggan() {
+    public String getFieldAlamatPelanggan() throws EmptyExeption{
+        if ("".equals(textAreaAlamat.getText())) {
+            throw new EmptyExeption();
+        }
         return textAreaAlamat.getText();
     }
     
@@ -217,6 +227,10 @@ public class ViewTambahUbahPelanggan extends javax.swing.JFrame {
     
     public void addActionSubmit(ActionListener listener) {
         btnSubmit.addActionListener(listener);
+    }
+    
+    public void addActionKembali(ActionListener listener) {
+        btnKembali.addActionListener(listener);
     }
     
      public void DipslayMessage(String S) {

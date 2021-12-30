@@ -20,7 +20,8 @@ public class CtrlBeranda {
         viewBeranda = new ViewBeranda();
         
         viewBeranda.addActionKeluar(new KeluarListener());
-        viewBeranda.addActionMenuPelanggan(new MPelangganListener());
+        viewBeranda.addActionMenuPelanggan(new MenuPelangganListener());
+        viewBeranda.addActionGrooming(new MenuGroomingListener());
         
         viewBeranda.setVisible(true);
         viewBeranda.setLocationRelativeTo(null);
@@ -28,19 +29,25 @@ public class CtrlBeranda {
     }
     
      class KeluarListener implements ActionListener {
-
         @Override
         public void actionPerformed(ActionEvent ae) {
             CtrlLogin login = new CtrlLogin();
             viewBeranda.dispose();
         }   
      }
-     class MPelangganListener implements ActionListener{
-
+     class MenuPelangganListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             CtrlMenuPelanggan menuPelanggan = new CtrlMenuPelanggan();
             viewBeranda.dispose();
         }   
+     }
+     
+     class MenuGroomingListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            CtrlMenuGrooming menuGrooming = new CtrlMenuGrooming();
+            viewBeranda.dispose();
+        }
      }
 }

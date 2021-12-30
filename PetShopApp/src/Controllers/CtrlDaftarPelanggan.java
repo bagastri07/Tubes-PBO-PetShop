@@ -33,7 +33,7 @@ public class CtrlDaftarPelanggan {
         //Add Listener
         viewDaftarPelanggan.addActionKembali(new KembaliListener());
         viewDaftarPelanggan.addMouseListPegawai(new DetailPelangganMouseAdapter());
-        viewDaftarPelanggan.addPelangganList(getDaftarPelanggan());
+        viewDaftarPelanggan.setPelangganList(getDaftarPelanggan());
         viewDaftarPelanggan.addActionHapusPelanggan(new HapusPelangganListener());
         viewDaftarPelanggan.addActionUbahPelanggan(new UbahPelangganListener());
         
