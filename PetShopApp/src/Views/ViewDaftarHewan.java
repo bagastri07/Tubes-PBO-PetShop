@@ -5,22 +5,16 @@
  */
 package Views;
 
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.ListModel;
-
 /**
  *
- * @author bagas
+ * @author Yoga
  */
-public class ViewDaftarPelanggan extends javax.swing.JFrame {
+public class ViewDaftarHewan extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewDaftarPelanggan
+     * Creates new form ViewDaftarHewan
      */
-    public ViewDaftarPelanggan() {
+    public ViewDaftarHewan() {
         initComponents();
     }
 
@@ -33,33 +27,33 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        labelJenisHewan = new javax.swing.JLabel();
+        labelJenisKelamin = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listPelanggan = new javax.swing.JList<>();
-        btnUbah = new javax.swing.JButton();
+        listHewan = new javax.swing.JList<>();
+        btnTambah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
         btnKembali = new javax.swing.JButton();
         labelNama = new javax.swing.JLabel();
-        labelNomor = new javax.swing.JLabel();
-        labelAlamat = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jScrollPane1.setViewportView(listPelanggan);
+        labelJenisHewan.setText("Jenis Hewan");
 
-        btnUbah.setText("Ubah");
+        labelJenisKelamin.setText("Jenis Kelamin");
+        labelJenisKelamin.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelJenisKelamin.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelJenisKelamin.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        jScrollPane1.setViewportView(listHewan);
+
+        btnTambah.setText("Tambah");
 
         btnHapus.setText("Hapus");
 
         btnKembali.setText("Kembali");
 
         labelNama.setText("Nama");
-
-        labelNomor.setText("Nomor Telepon");
-
-        labelAlamat.setText("Alamat");
-        labelAlamat.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        labelAlamat.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        labelAlamat.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,12 +67,12 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnHapus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(btnUbah, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnTambah, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(btnKembali))
                     .addComponent(labelNama)
-                    .addComponent(labelNomor)
-                    .addComponent(labelAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelJenisHewan)
+                    .addComponent(labelJenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
@@ -90,16 +84,16 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnKembali)
-                            .addComponent(btnUbah))
+                            .addComponent(btnTambah))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnHapus)
                         .addGap(29, 29, 29)
                         .addComponent(labelNama)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelNomor)
+                        .addComponent(labelJenisHewan)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(labelJenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,76 +116,32 @@ public class ViewDaftarPelanggan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewDaftarPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDaftarHewan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewDaftarPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDaftarHewan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewDaftarPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDaftarHewan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewDaftarPelanggan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDaftarHewan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewDaftarPelanggan().setVisible(true);
+                new ViewDaftarHewan().setVisible(true);
             }
         });
     }
-    
-    public JList getListPelanggan() {
-        return listPelanggan;
-    }
-    
-    public void addPelangganList(ListModel<String> value) {
-        listPelanggan.setModel(value);
-    }
-    
-    public void DipslayError(String S) {
-        JOptionPane.showMessageDialog(this, S);
-    }
-    
-    public void DipslayMessage(String S) {
-        JOptionPane.showMessageDialog(this, S);
-    }
-    
-    public void addActionKembali(ActionListener listener){
-        btnKembali.addActionListener(listener);
-    }
-    
-    public void addMouseListPegawai(MouseAdapter mouse) {
-        listPelanggan.addMouseListener(mouse);
-    }
-    
-    public void addActionHapusPelanggan(ActionListener listener) {
-        btnHapus.addActionListener(listener);
-    }
-    
-    public void addActionUbahPelanggan(ActionListener listener) {
-        btnUbah.addActionListener(listener);
-    }
-    
-    public void setLabelNama(String nama) {
-        labelNama.setText(nama);
-    }
-    
-    public void setLabelNomorTelp(String nomor) {
-        labelNomor.setText(nomor);
-    }
-    
-    public void setLabelAlamat(String alamat) {
-        labelAlamat.setText("<html>"+alamat+"</html>");
-    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnKembali;
-    private javax.swing.JButton btnUbah;
+    private javax.swing.JButton btnTambah;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelAlamat;
+    private javax.swing.JLabel labelJenisHewan;
+    private javax.swing.JLabel labelJenisKelamin;
     private javax.swing.JLabel labelNama;
-    private javax.swing.JLabel labelNomor;
-    private javax.swing.JList<String> listPelanggan;
+    private javax.swing.JList<String> listHewan;
     // End of variables declaration//GEN-END:variables
 }
