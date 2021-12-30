@@ -5,6 +5,8 @@
  */
 package Views;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Yoga
@@ -139,6 +141,10 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
                 new ViewDaftarHewan().setVisible(true);
             }
         });
+    }
+    
+    public void addActionKembali(ActionListener listener){
+        btnKembali.addActionListener(listener);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,6 +6,8 @@
 package Controllers;
 
 import Views.ViewDaftarHewan;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -17,10 +19,18 @@ public class CtrlDaftarHewan {
     public CtrlDaftarHewan() {
         viewDaftarHewan = new ViewDaftarHewan();
         
+        viewDaftarHewan.addActionKembali(new KembaliListener());
+        
         viewDaftarHewan.setVisible(true);
         viewDaftarHewan.setLocationRelativeTo(null);
         viewDaftarHewan.setTitle("Menu Daftar Hewan");
     }
     
-    
+    class KembaliListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CtrlBeranda beranda = new CtrlBeranda();
+            viewDaftarHewan.dispose();
+        }
+    }
 }

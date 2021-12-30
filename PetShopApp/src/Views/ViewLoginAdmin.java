@@ -143,7 +143,7 @@ public class ViewLoginAdmin extends javax.swing.JFrame {
     }
     
     public void DipslayError(String S) {
-        JOptionPane.showMessageDialog(this, S);
+        JOptionPane.showMessageDialog(this, S);//menampilkan dialog untuk error
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

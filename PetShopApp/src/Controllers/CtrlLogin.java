@@ -20,8 +20,8 @@ public class CtrlLogin {
     private ViewLoginAdmin viewAdmin;
 
     public CtrlLogin() {
-        modelAdmin = new Admin(1, "admin", "password", "Lukman Judge");
-        viewAdmin = new ViewLoginAdmin();
+        modelAdmin = new Admin(1, "admin", "password", "Lukman Judge");//membuat object
+        viewAdmin = new ViewLoginAdmin();//membuat object
         
         viewAdmin.addActionLogin(new LoginListener());
         
@@ -30,8 +30,8 @@ public class CtrlLogin {
         viewAdmin.setTitle("Login Admin");
     }
     
-    class LoginListener implements ActionListener {
-
+    class LoginListener implements ActionListener {//interface AL
+        //buat klo dipencet memanggil ini
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
@@ -45,7 +45,7 @@ public class CtrlLogin {
                     viewAdmin.DipslayError("Username atau Password salah!");
                 }
             } catch (Exception e) {
-                viewAdmin.DipslayError(e.getMessage());
+                viewAdmin.DipslayError(e.getMessage());//untuk kodingan
             }
         }
 
