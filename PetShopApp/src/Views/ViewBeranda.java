@@ -34,7 +34,7 @@ public class ViewBeranda extends javax.swing.JFrame {
         btnKeluar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnPelanggan = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnMenuHewan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,7 +48,7 @@ public class ViewBeranda extends javax.swing.JFrame {
 
         btnPelanggan.setText("Menu Pelanggan");
 
-        jButton1.setText("Menu Hewan");
+        btnMenuHewan.setText("Menu Hewan");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,29 +65,26 @@ public class ViewBeranda extends javax.swing.JFrame {
                             .addComponent(btnGrooming, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnPelanggan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnPenitipan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnMenuHewan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnKeluar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(134, 134, 134))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(btnKeluar)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(btnPelanggan)
-                .addGap(11, 11, 11)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnMenuHewan)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGrooming)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnPenitipan)
                 .addGap(18, 18, 18)
                 .addComponent(btnKeluar)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -140,12 +137,16 @@ public class ViewBeranda extends javax.swing.JFrame {
         btnGrooming.addActionListener(listener);
     }
     
+    public void addActionMenuHewan(ActionListener listener) {
+        btnMenuHewan.addActionListener(listener);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGrooming;
     private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnMenuHewan;
     private javax.swing.JButton btnPelanggan;
     private javax.swing.JButton btnPenitipan;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
