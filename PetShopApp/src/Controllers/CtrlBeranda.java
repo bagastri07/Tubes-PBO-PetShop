@@ -22,7 +22,8 @@ public class CtrlBeranda {
         viewBeranda.addActionKeluar(new KeluarListener());
         viewBeranda.addActionMenuPelanggan(new MenuPelangganListener());
         viewBeranda.addActionGrooming(new MenuGroomingListener());
-        viewBeranda.addActionMenuHewan(new MenuDaftarHewan());
+        viewBeranda.addActionMenuHewan(new MenuDaftarHewanListener());
+        viewBeranda.addActionMenuReport(new MenuReportListener());
         
         viewBeranda.setVisible(true);
         viewBeranda.setLocationRelativeTo(null);
@@ -52,10 +53,18 @@ public class CtrlBeranda {
         }
      }
      
-     class MenuDaftarHewan implements ActionListener{
+     class MenuDaftarHewanListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
             CtrlDaftarHewan daftarHewan = new CtrlDaftarHewan();
+            viewBeranda.dispose();
+        }
+     }
+     
+     class MenuReportListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            CtrlMenuReportPenjualan menuPenjualan = new CtrlMenuReportPenjualan();
             viewBeranda.dispose();
         }
      }

@@ -5,6 +5,8 @@
  */
 package Views;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Farrel
@@ -106,6 +108,10 @@ public class ViewMenuReportPenjualan extends javax.swing.JFrame {
                 new ViewMenuReportPenjualan().setVisible(true);
             }
         });
+    }
+    
+    public void addActionKembali(ActionListener listener) {
+        btnKembali.addActionListener(listener);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
