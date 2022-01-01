@@ -6,6 +6,10 @@
 package Views;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.ListModel;
 
 /**
  *
@@ -38,6 +42,7 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
         btnKembali = new javax.swing.JButton();
         labelNama = new javax.swing.JLabel();
         labelJenisKelamin = new javax.swing.JLabel();
+        labelPemilik = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +65,11 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
 
         labelJenisKelamin.setText("Jenis Kelamin");
 
+        labelPemilik.setText("Pemilik");
+        labelPemilik.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labelPemilik.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelPemilik.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,7 +88,8 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
                     .addComponent(labelNama)
                     .addComponent(labelJenisHewan)
                     .addComponent(labelUsia, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelJenisKelamin))
+                    .addComponent(labelJenisKelamin)
+                    .addComponent(labelPemilik, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
@@ -86,7 +97,7 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnKembali)
                             .addComponent(btnTambah))
@@ -96,13 +107,14 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
                         .addComponent(labelNama)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelJenisHewan)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelJenisKelamin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelUsia, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(labelUsia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelPemilik))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,6 +158,50 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
     public void addActionKembali(ActionListener listener){
         btnKembali.addActionListener(listener);
     }
+    
+    public void addActionTambahHewanPeliharaan(ActionListener listener){
+        btnTambah.addActionListener(listener);
+    }
+    
+    public void addActionHapusHewanPeliharaan(ActionListener listener) {
+        btnHapus.addActionListener(listener);
+    }
+    
+    public void DipslayMessage(String S) {
+        JOptionPane.showMessageDialog(this, S);
+    }
+    
+    public JList getListHewan() {
+        return listHewan;
+    }
+    
+    public void setHewanList(ListModel<String> value) {
+        listHewan.setModel(value);
+    }
+    
+    public void setNamaHewan(String nama) {
+        labelNama.setText(nama);
+    }
+    
+    public void setNamaPemilik(String namaPemilik) {
+        labelPemilik.setText(namaPemilik);
+    }
+    
+    public void setUsiaHewan(String usia) {
+        labelUsia.setText(usia);
+    }
+    
+    public void setJenisHewan(String jenisHewan) {
+        labelJenisHewan.setText(jenisHewan);
+    }
+    
+    public void setJenisKelamin(String jenisKelamin) {
+        labelJenisKelamin.setText(jenisKelamin);
+    }
+    
+    public void addMouseListHewanPeliharaan(MouseAdapter mouse) {
+        listHewan.addMouseListener(mouse);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;
@@ -155,6 +211,7 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
     private javax.swing.JLabel labelJenisHewan;
     private javax.swing.JLabel labelJenisKelamin;
     private javax.swing.JLabel labelNama;
+    private javax.swing.JLabel labelPemilik;
     private javax.swing.JLabel labelUsia;
     private javax.swing.JList<String> listHewan;
     // End of variables declaration//GEN-END:variables

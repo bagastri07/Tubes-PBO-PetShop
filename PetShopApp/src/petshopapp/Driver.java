@@ -6,7 +6,6 @@
 package petshopapp;
 
 import Controllers.CtrlLogin;
-import Database.Database;
 import java.sql.SQLException;
 
 /**
@@ -19,7 +18,7 @@ public class Driver {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        // TODO code application logic here
+        // TODO code application logic here        
         CtrlLogin controlLogin = new CtrlLogin();
     }
     

@@ -62,13 +62,12 @@ public class CtrlTambahUbahPelanggan {
                     SQL = String.format("UPDATE pelanggan"
                             + " SET nama = '%s', nomorTelepon = '%s', alamat = '%s'"
                             + " WHERE id = %s;", nama, nomorTelepon, alamat, idPelanggan);
-                    System.out.println(SQL);
                     db.query(SQL);
                     
                     viewTambahUbah.DipslayMessage("Pelanggan dengan id " + idPelanggan + " Berhasil diubah");
                 }
                 //Change Panel
- {              CtrlMenuPelanggan menuPelanngan = new CtrlMenuPelanggan();
+ {              CtrlDaftarPelanggan daftarPelanggan = new CtrlDaftarPelanggan();
                 viewTambahUbah.dispose();
                 }
             } catch (Exception e) {

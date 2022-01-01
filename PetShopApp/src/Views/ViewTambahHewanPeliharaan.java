@@ -5,6 +5,10 @@
  */
 package Views;
 
+import java.awt.event.ActionListener;
+import javax.swing.ComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Farrel
@@ -176,6 +180,22 @@ public class ViewTambahHewanPeliharaan extends javax.swing.JFrame {
                 new ViewTambahHewanPeliharaan().setVisible(true);
             }
         });
+    }
+    
+    public void addActionKembali(ActionListener listener) {
+        btnKembali.addActionListener(listener);
+    }
+    
+    public void addActionSubmit(ActionListener listener) {
+        btnSubmit.addActionListener(listener);
+    }
+    
+    public void setPelangganDropDown(ComboBoxModel cbm){
+        dropDownNamaPelanggan.setModel(cbm);
+    }
+    
+    public void DisplayMessage(String S) {
+        JOptionPane.showMessageDialog(this, S);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

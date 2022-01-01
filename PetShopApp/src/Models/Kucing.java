@@ -10,7 +10,9 @@ package Models;
  * @author Farrel
  */
 public class Kucing extends HewanPeliharaan{
-    public Kucing(String nama, String jenisKelamin, int Umur) {
-        super(nama, jenisKelamin, Umur);
+
+    public Kucing(int id, int usia, String nama, String jenisKelamin, Pelanggan pemilik) {
+        super(id, usia, nama, jenisKelamin, pemilik);
     }
+    
 }

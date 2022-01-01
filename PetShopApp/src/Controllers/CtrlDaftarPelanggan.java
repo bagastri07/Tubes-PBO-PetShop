@@ -33,7 +33,7 @@ public class CtrlDaftarPelanggan {
         //Add Listener
         viewDaftarPelanggan.addActionKembali(new KembaliListener());
         viewDaftarPelanggan.addMouseListPegawai(new DetailPelangganMouseAdapter());
-        viewDaftarPelanggan.setPelangganList(getDaftarPelanggan());
+        viewDaftarPelanggan.setPelangganList(LoadPelangganDropDown());
         viewDaftarPelanggan.addActionHapusPelanggan(new HapusPelangganListener());
         viewDaftarPelanggan.addActionUbahPelanggan(new UbahPelangganListener());
         
@@ -42,7 +42,7 @@ public class CtrlDaftarPelanggan {
         viewDaftarPelanggan.setTitle("Daftar Pelanggan");
     }
     
-    private DefaultListModel getDaftarPelanggan() {
+    private DefaultListModel LoadPelangganDropDown() {
         DefaultListModel<String> dlm = new DefaultListModel<>();
         try {
             Database db = new Database();

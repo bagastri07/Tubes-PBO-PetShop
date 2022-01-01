@@ -10,7 +10,9 @@ package Models;
  * @author Farrel
  */
 public class Anjing extends HewanPeliharaan{
-    public Anjing(String nama, String jenisKelamin, int Umur) {
-        super(nama, jenisKelamin, Umur);
+
+    public Anjing(int id, int usia, String nama, String jenisKelamin, Pelanggan pemilik) {
+        super(id, usia, nama, jenisKelamin, pemilik);
     }
+    
 }

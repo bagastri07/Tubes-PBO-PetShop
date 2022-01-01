@@ -10,37 +10,56 @@ package Models;
  * @author Farrel
  */
 public class HewanPeliharaan {
+    private int id, usia;
     private String nama, jenisKelamin;
-    private int Umur;
+    private Pelanggan pemilik;
 
-    public HewanPeliharaan(String nama, String jenisKelamin, int Umur) {
+    public HewanPeliharaan(int id, int usia, String nama, String jenisKelamin, Pelanggan pemilik) {
+        this.id = id;
+        this.usia = usia;
         this.nama = nama;
         this.jenisKelamin = jenisKelamin;
-        this.Umur = Umur;
+        this.pemilik = pemilik;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public int getId() {
+        return id;
     }
 
-    public void setJenisKelamin(String jenisKelamin) {
-        this.jenisKelamin = jenisKelamin;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setUmur(int Umur) {
-        this.Umur = Umur;
+    public int getUsia() {
+        return usia;
+    }
+
+    public void setUsia(int usia) {
+        this.usia = usia;
     }
 
     public String getNama() {
         return nama;
     }
 
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
     public String getJenisKelamin() {
         return jenisKelamin;
     }
 
-    public int getUmur() {
-        return Umur;
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public Pelanggan getPemilik() {
+        return pemilik;
+    }
+
+    public void setPemilik(Pelanggan pemilik) {
+        this.pemilik = pemilik;
     }
     
     

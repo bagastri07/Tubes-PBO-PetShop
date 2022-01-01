@@ -20,7 +20,7 @@ public class CtrlLogin {
     private ViewLoginAdmin viewAdmin;
 
     public CtrlLogin() {
-        modelAdmin = new Admin(1, "admin", "password", "Lukman Judge");//membuat object
+        modelAdmin = new Admin(1, "", "", "Lukman Judge");//membuat object
         viewAdmin = new ViewLoginAdmin();//membuat object
         
         viewAdmin.addActionLogin(new LoginListener());
