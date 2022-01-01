@@ -28,6 +28,7 @@ public class ViewTambahHewanPeliharaan extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -54,8 +55,10 @@ public class ViewTambahHewanPeliharaan extends javax.swing.JFrame {
 
         jLabel9.setText("Bulan");
 
+        buttonGroup1.add(radioButtonJantan);
         radioButtonJantan.setText("Jantan");
 
+        buttonGroup1.add(radioButtonBetina);
         radioButtonBetina.setText("Betina");
 
         jLabel3.setText("Nama Pelanggan");
@@ -179,6 +182,7 @@ public class ViewTambahHewanPeliharaan extends javax.swing.JFrame {
     private javax.swing.JButton btnKembali;
     private javax.swing.JToggleButton btnSubmit;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> dropDownNamaPelanggan;
     private javax.swing.JTextField fieldNamaHewan;
     private javax.swing.JTextField fieldUsiaHewan;
