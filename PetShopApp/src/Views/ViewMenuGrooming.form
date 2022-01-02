@@ -67,9 +67,9 @@
               <EmptySpace pref="32" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cmbPelanggan" max="32767" attributes="0"/>
-                  <Component id="cmbHewan" alignment="0" max="32767" attributes="0"/>
-                  <Component id="cmbLayanan" pref="206" max="32767" attributes="0"/>
+                  <Component id="cbmPelanggan" max="32767" attributes="0"/>
+                  <Component id="cbmHewan" alignment="0" max="32767" attributes="0"/>
+                  <Component id="cbmLayanan" pref="206" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
           </Group>
@@ -83,17 +83,17 @@
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cmbPelanggan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmPelanggan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cmbHewan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmHewan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblLayanan" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cmbLayanan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmLayanan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="65" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -126,7 +126,7 @@
         <Property name="text" type="java.lang.String" value="Layanan Grooming"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cmbPelanggan">
+    <Component class="javax.swing.JComboBox" name="cbmPelanggan">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -141,7 +141,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cmbHewan">
+    <Component class="javax.swing.JComboBox" name="cbmHewan">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -166,13 +166,13 @@
         <Property name="text" type="java.lang.String" value="Layanan"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cmbLayanan">
+    <Component class="javax.swing.JComboBox" name="cbmLayanan">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
-            <StringItem index="0" value="Mandi Hewan"/>
+            <StringItem index="0" value="Memandikan Hewan"/>
             <StringItem index="1" value="Membersihkan Kutu"/>
-            <StringItem index="2" value="Membersihkan Kuku"/>
+            <StringItem index="2" value="Memotong Kuku"/>
           </StringArray>
         </Property>
       </Properties>

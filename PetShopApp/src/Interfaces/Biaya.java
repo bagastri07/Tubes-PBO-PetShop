@@ -9,7 +9,6 @@ package Interfaces;
  *
  * @author bagas
  */
-public interface MetodePembayaran {
-    public float MembayarDenganGopay();
-    public float MembayarDenganTunai();
+public interface Biaya {
+    public float menghitungBiaya();
 }

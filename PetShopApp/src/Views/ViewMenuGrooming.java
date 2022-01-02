@@ -7,6 +7,7 @@ package Views;
 
 import java.awt.event.ActionListener;
 import javax.swing.ComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,11 +38,11 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        cmbPelanggan = new javax.swing.JComboBox<>();
-        cmbHewan = new javax.swing.JComboBox<>();
+        cbmPelanggan = new javax.swing.JComboBox<>();
+        cbmHewan = new javax.swing.JComboBox<>();
         btnKembali = new javax.swing.JButton();
         lblLayanan = new javax.swing.JLabel();
-        cmbLayanan = new javax.swing.JComboBox<>();
+        cbmLayanan = new javax.swing.JComboBox<>();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -60,15 +61,15 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
 
         jLabel3.setText("Layanan Grooming");
 
-        cmbPelanggan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbmPelanggan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        cmbHewan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbmHewan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnKembali.setText("Kembali");
 
         lblLayanan.setText("Layanan");
 
-        cmbLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mandi Hewan", "Membersihkan Kutu", "Membersihkan Kuku" }));
+        cbmLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Memandikan Hewan", "Membersihkan Kutu", "Memotong Kuku" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,9 +90,9 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(cmbPelanggan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmbHewan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmbLayanan, 0, 206, Short.MAX_VALUE))
+                    .addComponent(cbmPelanggan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbmHewan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbmLayanan, 0, 206, Short.MAX_VALUE))
                 .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
@@ -102,15 +103,15 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(cmbPelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbmPelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(cmbHewan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbmHewan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLayanan)
-                    .addComponent(cmbLayanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbmLayanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmit)
@@ -157,21 +158,52 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
         });
     }
     public void setPelangganDropDown(ComboBoxModel cbm){
-        cmbPelanggan.setModel(cbm);
+        cbmPelanggan.setModel(cbm);
     }
+    
+    public void setHewanPeliharaanDropDown(ComboBoxModel cbm) {
+        cbmHewan.setModel(cbm);
+    }
+    
     public void addActionKembali(ActionListener listener){
         btnKembali.addActionListener(listener);
     }
-    public void DipslayMessage(String S) {
+    public void DisplayMessage(String S) {
         JOptionPane.showMessageDialog(this, S);
+    }
+    
+    public void addActionDropDownPelanggan(ActionListener listener) {
+       cbmPelanggan.addActionListener(listener);
+    }
+    
+    public int getIdPelanggan() {
+        String temp = (String) cbmPelanggan.getSelectedItem();
+        String[] arrTemp = temp.split("-");
+        int idPelanggan = Integer.parseInt(arrTemp[1]);
+        return idPelanggan;
+    }
+    
+    public int getIdHewan() {
+        String temp = (String) cbmHewan.getSelectedItem();
+        String[] arrTemp = temp.split("-");
+        int idHewan = Integer.parseInt(arrTemp[1]);
+        return idHewan;
+    }
+    
+    public String getLayanan() {
+        return (String) cbmLayanan.getSelectedItem();
+    }
+    
+    public void addActionSubmit(ActionListener listener) {
+        btnSubmit.addActionListener(listener);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnKembali;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JComboBox<String> cmbHewan;
-    private javax.swing.JComboBox<String> cmbLayanan;
-    private javax.swing.JComboBox<String> cmbPelanggan;
+    private javax.swing.JComboBox<String> cbmHewan;
+    private javax.swing.JComboBox<String> cbmLayanan;
+    private javax.swing.JComboBox<String> cbmPelanggan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

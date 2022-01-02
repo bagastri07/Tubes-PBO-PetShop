@@ -38,7 +38,7 @@ public class CtrlLogin {
                 String username = viewAdmin.getUsername();
                 String password = viewAdmin.getPassword();
                 
-                if (username.equals(modelAdmin.getUsername()) && password.equals(modelAdmin.getPassword())) {
+                if (modelAdmin.loginAdmin(username, password)) {
                     CtrlBeranda beranda = new CtrlBeranda();
                     viewAdmin.dispose();
                 } else {

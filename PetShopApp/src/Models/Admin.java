@@ -52,5 +52,12 @@ public class Admin {
         return nama;
     }
     
+    public Boolean loginAdmin(String username, String password) {
+        if (this.username.equals(username) && this.password.equals(password)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
 }

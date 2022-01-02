@@ -5,54 +5,72 @@
  */
 package Models;
 
+import Interfaces.Biaya;
+import Interfaces.MetodePembayaran;
+
 /**
  *
  * @author bagas
  */
-public class Grooming implements MetodePembayaran{
-    private String nama;
-    private  Pelanggan pelanggan;
+public class Grooming implements Biaya, MetodePembayaran{
     private HewanPeliharaan hewan;
+    private String layanan;
 
-    public Grooming(String nama, Pelanggan pelanggan, HewanPeliharaan hewan) {
-        this.nama = nama;
-        this.pelanggan = pelanggan;
+    public Grooming(HewanPeliharaan hewan, String layanan) {
         this.hewan = hewan;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public void setPelanggan(Pelanggan pelanggan) {
-        this.pelanggan = pelanggan;
-    }
-
-    public void setHewan(HewanPeliharaan hewan) {
-        this.hewan = hewan;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public Pelanggan getPelanggan() {
-        return pelanggan;
+        this.layanan = layanan;
     }
 
     public HewanPeliharaan getHewan() {
         return hewan;
     }
 
+    public void setHewan(HewanPeliharaan hewan) {
+        this.hewan = hewan;
+    }
+
+    public String getLayanan() {
+        return layanan;
+    }
+
+    public void setLayanan(String layanan) {
+        this.layanan = layanan;
+    }
+
+    
+
     @Override
-    public void bayarDgnGopay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float menghitungBiaya() {
+        // Biaya Tambahan untuk Hewan Jenis Anjing
+        float biayaTambahan = 0;
+        if (hewan instanceof Anjing) {
+            biayaTambahan = 15000;
+        }
+        
+        if (layanan.equals("Memandikan Hewan")) {
+            return 50000 + biayaTambahan;
+        } else if (layanan.equals("Membersihkan Kutu")) {
+            return 70000 + biayaTambahan;
+        } else {
+            return 30000 + biayaTambahan;
+        }
     }
 
     @Override
-    public void bayarDgnTunai() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float MembayarDenganGopay() {
+        // diskon Gopay 10%
+        float biaya = menghitungBiaya();
+        float diskon = biaya * 10 / 100;
+        return biaya - diskon;
     }
-    
-    
+
+    @Override
+    public float MembayarDenganTunai() {
+        //Tunai ga ada diskon
+        float biaya = menghitungBiaya();
+        return biaya;
+    }
+
+
+
 }

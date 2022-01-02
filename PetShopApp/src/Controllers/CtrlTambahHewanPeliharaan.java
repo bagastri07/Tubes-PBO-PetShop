@@ -30,6 +30,7 @@ public class CtrlTambahHewanPeliharaan {
         
         viewTambahHewan.addActionKembali(new KembaliListener());
         viewTambahHewan.setPelangganDropDown(loadPelangganDropDown());
+        viewTambahHewan.addActionSubmit(new SubmitListener());
         
         viewTambahHewan.setVisible(true);
         viewTambahHewan.setLocationRelativeTo(null);
@@ -64,5 +65,30 @@ public class CtrlTambahHewanPeliharaan {
         }
     }
     
+    class SubmitListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            try {
+                String namaHewan = viewTambahHewan.getNamaHewanPeliharaan();
+                int usiaHewan = viewTambahHewan.getUsiaHewanPeliharaan();
+                String jenisHewan = viewTambahHewan.getJenisHewanPeliharaan();
+                String jenisKelaminHewan = viewTambahHewan.getJenisKelaminHewanPeliharaan();
+                int idPelanggan = viewTambahHewan.getIdPelanggan();
+                
+                Database db = new Database();
+                String sql = String.format("INSERT INTO `hewan_peliharaan`"
+                        + "(`id`, `nama`, `jenis_kelamin`, `usia`, `jenis_hewan`, `id_pelanggan`)"
+                        + "VALUES (NULL, '%s', '%s', '%d', '%s', '%s') "
+                        , namaHewan, jenisKelaminHewan, usiaHewan, jenisHewan, idPelanggan);
+                db.query(sql);
+                viewTambahHewan.DisplayMessage("Hewan Dengan Nama " + namaHewan + " Berhasil ditambahkan!");
+                CtrlDaftarHewan daftarHewan = new CtrlDaftarHewan();
+                viewTambahHewan.dispose();
+            } catch (Exception e) {
+                viewTambahHewan.DisplayMessage(e.getMessage());
+            }
+            
+        }   
+    }
     
 }
