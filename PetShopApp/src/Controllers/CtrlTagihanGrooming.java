@@ -28,7 +28,7 @@ public class CtrlTagihanGrooming {
         
         viewTagihan.setVisible(true);
         viewTagihan.setLocationRelativeTo(null);
-        viewTagihan.setTagihan("Tagihan Grooming");
+        viewTagihan.setTitle("Tagihan Grooming");
     }
     
     public void setGroomingModel(HewanPeliharaan hewanPeliharaan, String layanan) {
