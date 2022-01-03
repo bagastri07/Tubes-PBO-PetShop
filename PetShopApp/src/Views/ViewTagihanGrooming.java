@@ -239,6 +239,10 @@ public class ViewTagihanGrooming extends javax.swing.JFrame {
     public void addActionKembali(ActionListener listener) {
         btnKembali.addActionListener(listener);
     }
+    
+    public void addActionSubmit(ActionListener listener) {
+        btnSubmit.addActionListener(listener);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnKembali;

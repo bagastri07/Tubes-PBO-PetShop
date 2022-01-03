@@ -7,7 +7,9 @@ package Views;
 
 import Models.HewanPeliharaan;
 import Models.Kucing;
+import Models.Layanan;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -51,6 +53,7 @@ public class ViewInvoice extends javax.swing.JFrame {
         fieldDiskon = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         fieldTotalBiaya = new javax.swing.JTextField();
+        fieldTanggalPembelian = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +122,9 @@ public class ViewInvoice extends javax.swing.JFrame {
         fieldTotalBiaya.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         fieldTotalBiaya.setText("Total Biaya");
 
+        fieldTanggalPembelian.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        fieldTanggalPembelian.setText("TanggalPembelian");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,12 +132,15 @@ public class ViewInvoice extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel1)
-                                .addGap(53, 53, 53))
+                        .addGap(174, 174, 174)
+                        .addComponent(btnSelesai))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fieldTanggalPembelian)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel10)
                                 .addComponent(jLabel4)
@@ -150,18 +159,17 @@ public class ViewInvoice extends javax.swing.JFrame {
                                 .addComponent(fieldMetodePembayaran)
                                 .addComponent(fieldBiayaLayanan)
                                 .addComponent(fieldDiskon)
-                                .addComponent(fieldTotalBiaya, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(btnSelesai)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                                .addComponent(fieldTotalBiaya, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(fieldTanggalPembelian)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldNoInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,7 +205,7 @@ public class ViewInvoice extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldTotalBiaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(btnSelesai)
                 .addContainerGap())
         );
@@ -288,6 +296,34 @@ public class ViewInvoice extends javax.swing.JFrame {
     public void addActionSelesai(ActionListener listener) {
         btnSelesai.addActionListener(listener);
     }
+    
+    public void setBiaya(float biaya) {
+        fieldBiayaLayanan.setText("Rp. "+String.valueOf(biaya));
+    }
+    
+    public void setDiskon(float diskon) {
+        fieldDiskon.setText("Rp. "+String.valueOf(diskon));
+    }
+    
+    public void setTotalBiaya(float total) {
+        fieldTotalBiaya.setText("Rp. "+String.valueOf(total));
+    }
+    
+    public void setTanggalTransaksi(String tanggal) {
+        fieldTanggalPembelian.setText(tanggal);
+    }
+    
+    public String getTanggalTransaksi() {
+        return fieldTanggalPembelian.getText();
+    }
+    
+    public String getMetodePembayaran() {
+        return fieldMetodePembayaran.getText();
+    }
+    
+    public void DisplayMessage(String S) {
+        JOptionPane.showMessageDialog(this, S);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSelesai;
@@ -299,6 +335,7 @@ public class ViewInvoice extends javax.swing.JFrame {
     private javax.swing.JTextField fieldNamaHewan;
     private javax.swing.JTextField fieldNamaPemilik;
     private javax.swing.JTextField fieldNoInvoice;
+    private javax.swing.JLabel fieldTanggalPembelian;
     private javax.swing.JTextField fieldTotalBiaya;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

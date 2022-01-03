@@ -12,24 +12,15 @@ import Interfaces.MetodePembayaran;
  *
  * @author bagas
  */
-public class Grooming implements Biaya, MetodePembayaran{
-    private HewanPeliharaan hewan;
+public class Grooming extends Layanan{
     private String layanan;
 
-    public Grooming(HewanPeliharaan hewan, String layanan) {
-        this.hewan = hewan;
+    public Grooming(HewanPeliharaan hewanPeliharaan, String layanan) {
+        super(hewanPeliharaan);
         this.layanan = layanan;
     }
 
-    public HewanPeliharaan getHewan() {
-        return hewan;
-    }
-
-    public void setHewan(HewanPeliharaan hewan) {
-        this.hewan = hewan;
-    }
-
-    public String getLayanan() {
+    public String getJenisLayanan() {
         return layanan;
     }
 
@@ -37,13 +28,11 @@ public class Grooming implements Biaya, MetodePembayaran{
         this.layanan = layanan;
     }
 
-    
-
     @Override
     public float menghitungBiaya() {
         // Biaya Tambahan untuk Hewan Jenis Anjing
         float biayaTambahan = 0;
-        if (hewan instanceof Anjing) {
+        if (super.getHewan() instanceof Anjing) {
             biayaTambahan = 15000;
         }
         
