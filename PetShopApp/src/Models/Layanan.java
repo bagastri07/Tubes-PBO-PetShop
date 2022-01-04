@@ -28,6 +28,8 @@ public abstract class Layanan implements Biaya, MetodePembayaran{
     }
     
     public abstract String getJenisLayanan();
+    
+    public abstract int getLamaPenitipan();
 
     @Override
     public abstract float menghitungBiaya();

@@ -9,38 +9,52 @@ package Models;
  *
  * @author bagas
  */
-public class Penitipan {
-    private String nama;
-    private Pelanggan pelanggan;
-    private HewanPeliharaan hewan;
+public class Penitipan extends Layanan{
+    private int lamaPenitipan;
 
-    public Penitipan(String nama, Pelanggan pelanggan, HewanPeliharaan hewan) {
-        this.nama = nama;
-        this.pelanggan = pelanggan;
-        this.hewan = hewan;
+    public Penitipan(HewanPeliharaan hewan, int lamaPenitipan) {
+        super(hewan);
+        this.lamaPenitipan = lamaPenitipan;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public int getLamaPenitipan() {
+        return lamaPenitipan;
     }
 
-    public void setPelanggan(Pelanggan pelanggan) {
-        this.pelanggan = pelanggan;
+    public void setLamaPenitipan(int lamaPenitipan) {
+        this.lamaPenitipan = lamaPenitipan;
     }
 
-    public void setHewan(HewanPeliharaan hewan) {
-        this.hewan = hewan;
+    @Override
+    public String getJenisLayanan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getNama() {
-        return nama;
+    @Override
+    public float menghitungBiaya() {
+        float biaya = 20000;
+        if (lamaPenitipan <= 3) {
+            biaya = 30000;
+        } else if (lamaPenitipan <= 8) {
+            biaya = 25000;
+        }
+        return lamaPenitipan * biaya;
     }
 
-    public Pelanggan getPelanggan() {
-        return pelanggan;
+    @Override
+    public float MembayarDenganGopay() {
+        // diskon Gopay 10%
+        float biaya = menghitungBiaya();
+        float diskon = biaya * 10 / 100;
+        return biaya - diskon;
     }
 
-    public HewanPeliharaan getHewan() {
-        return hewan;
+    @Override
+    public float MembayarDenganTunai() {
+        //Tunai ga ada diskon
+        float biaya = menghitungBiaya();
+        return biaya;
     }
+    
+    
 }

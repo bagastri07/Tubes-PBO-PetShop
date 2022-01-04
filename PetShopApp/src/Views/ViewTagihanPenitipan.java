@@ -5,6 +5,10 @@
  */
 package Views;
 
+import Models.HewanPeliharaan;
+import Models.Kucing;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Yoga
@@ -195,6 +199,46 @@ public class ViewTagihanPenitipan extends javax.swing.JFrame {
                 new ViewTagihanPenitipan().setVisible(true);
             }
         });
+    }
+    
+    public void setNamaPemilik(String nama) {
+        fieldNamaPemilik.setText(nama);
+    }
+    
+    public void setNamaHewan(String namaHewan) {
+        fieldNamaHewan.setText(namaHewan);
+    }
+    
+    public void setTagihan(String tagihan) {
+        fieldTagihan.setText(tagihan);
+    }
+    
+    public void setLamaPenitipan(String layanan) {
+        fieldLamaPenitipan.setText(layanan);
+    }
+    
+    public void setJenisHewan(HewanPeliharaan hewanPeliharaan) {
+        String jenisHewan = "";
+        
+        if (hewanPeliharaan instanceof Kucing) {
+            jenisHewan = "Kucing";
+        } else {
+            jenisHewan = "Anjing";
+        }
+        
+        fieldJenisHewan.setText(jenisHewan);
+    }
+    
+    public String getMetodePembayaran() {
+        return (String) cbmMetodePembayaran.getSelectedItem();
+    }
+    
+    public void addActionKembali(ActionListener listener) {
+        btnKembali.addActionListener(listener);
+    }
+    
+    public void addActionBayar(ActionListener listener) {
+        btnBayar.addActionListener(listener);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

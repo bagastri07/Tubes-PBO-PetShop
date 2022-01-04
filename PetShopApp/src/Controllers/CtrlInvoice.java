@@ -41,6 +41,8 @@ public class CtrlInvoice {
         viewInvoice.setJenisHewan(invoice.getLayanan().getHewan());
         if (layanan instanceof Grooming) {
             viewInvoice.setLayanan("Grooming-"+invoice.getLayanan().getJenisLayanan());
+        } else {
+            viewInvoice.setLayanan("Penitipan-"+invoice.getLayanan().getLamaPenitipan()+" Hari");
         }
         viewInvoice.setMetodePembayaran(metodePembayaran);
         viewInvoice.setBiaya(invoice.getLayanan().menghitungBiaya());
@@ -66,6 +68,8 @@ public class CtrlInvoice {
                 String jenisLayanan = null;
                 if (invoice.getLayanan() instanceof Grooming) {
                     jenisLayanan = "Grooming-"+invoice.getLayanan().getJenisLayanan();
+                } else {
+                    jenisLayanan = "Penitipan-"+invoice.getLayanan().getLamaPenitipan()+" Hari";
                 }
                 String metodePembayaran = viewInvoice.getMetodePembayaran();
                 String tanggalTransaksi = viewInvoice.getTanggalTransaksi();

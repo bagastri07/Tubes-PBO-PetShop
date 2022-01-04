@@ -7,9 +7,6 @@ package Controllers;
 
 import Models.Grooming;
 import Models.HewanPeliharaan;
-import Models.Kucing;
-import Models.Layanan;
-import Models.Pelanggan;
 import Views.ViewTagihanGrooming;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +23,7 @@ public class CtrlTagihanGrooming {
         viewTagihan = new ViewTagihanGrooming();
         
         viewTagihan.addActionKembali(new KembaliListener());
-        viewTagihan.addActionSubmit(new SubmitListener());
+        viewTagihan.addActionBayar(new BayarListener());
         
         viewTagihan.setVisible(true);
         viewTagihan.setLocationRelativeTo(null);
@@ -52,7 +49,7 @@ public class CtrlTagihanGrooming {
         }   
     }
     
-    class SubmitListener implements ActionListener{
+    class BayarListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
             CtrlInvoice invoice = new CtrlInvoice();

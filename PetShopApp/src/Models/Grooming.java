@@ -5,9 +5,6 @@
  */
 package Models;
 
-import Interfaces.Biaya;
-import Interfaces.MetodePembayaran;
-
 /**
  *
  * @author bagas
@@ -58,6 +55,11 @@ public class Grooming extends Layanan{
         //Tunai ga ada diskon
         float biaya = menghitungBiaya();
         return biaya;
+    }
+
+    @Override
+    public int getLamaPenitipan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

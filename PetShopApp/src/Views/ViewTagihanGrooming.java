@@ -41,7 +41,7 @@ public class ViewTagihanGrooming extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         cbmMetodePembayaran = new javax.swing.JComboBox<>();
         btnKembali = new javax.swing.JButton();
-        btnSubmit = new javax.swing.JButton();
+        btnBayar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         fieldLayanan = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -73,7 +73,7 @@ public class ViewTagihanGrooming extends javax.swing.JFrame {
 
         btnKembali.setText("Kembali");
 
-        btnSubmit.setText("Submit");
+        btnBayar.setText("Bayar");
 
         jLabel6.setText("Jenis Layanan :");
 
@@ -122,8 +122,8 @@ public class ViewTagihanGrooming extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(122, 122, 122)
-                    .addComponent(btnSubmit)
-                    .addContainerGap(212, Short.MAX_VALUE)))
+                    .addComponent(btnBayar)
+                    .addContainerGap(215, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +162,7 @@ public class ViewTagihanGrooming extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(379, Short.MAX_VALUE)
-                    .addComponent(btnSubmit)
+                    .addComponent(btnBayar)
                     .addGap(19, 19, 19)))
         );
 
@@ -240,13 +240,13 @@ public class ViewTagihanGrooming extends javax.swing.JFrame {
         btnKembali.addActionListener(listener);
     }
     
-    public void addActionSubmit(ActionListener listener) {
-        btnSubmit.addActionListener(listener);
+    public void addActionBayar(ActionListener listener) {
+        btnBayar.addActionListener(listener);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBayar;
     private javax.swing.JButton btnKembali;
-    private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> cbmMetodePembayaran;
     private javax.swing.JTextField fieldJenisHewan;
     private javax.swing.JTextField fieldLayanan;
