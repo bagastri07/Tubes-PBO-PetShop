@@ -16,7 +16,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JComboBox;
 import javax.swing.JList;
 
 /**
@@ -33,6 +35,8 @@ public class CtrlDaftarHewan {
         
         viewDaftarHewan.addActionKembali(new KembaliListener());
         viewDaftarHewan.addActionTambahHewanPeliharaan(new TambahHewanPeliharaanListener());
+        viewDaftarHewan.setPelangganDropDown(LoadPelangganDropDown());
+        viewDaftarHewan.addActionDropDownPelanggan(new DropDownPelangganListener());
         viewDaftarHewan.setHewanList(LoadHewanPeliharaanDropDown());
         viewDaftarHewan.addMouseListHewanPeliharaan(new DetailHewanPeliharaanMouseAdapter());
         viewDaftarHewan.addActionHapusHewanPeliharaan(new HapusHewanPeliharaan());
@@ -40,11 +44,10 @@ public class CtrlDaftarHewan {
         viewDaftarHewan.setVisible(true);
         viewDaftarHewan.setLocationRelativeTo(null);
         viewDaftarHewan.setTitle("Menu Daftar Hewan");
-        
-        loadtDaftarPelangganDatabase();
     }
     
-    private void loadtDaftarPelangganDatabase() {
+    private DefaultComboBoxModel LoadPelangganDropDown() {
+        DefaultComboBoxModel<String> cbm = new DefaultComboBoxModel<>();
         try {
             Database db = new Database();
             String sql = "SELECT * FROM pelanggan";
@@ -52,14 +55,16 @@ public class CtrlDaftarHewan {
             while(rs.next()) {
                 listPelanggan.add(new Pelanggan(rs.getInt("id"),rs.getString("nama") ,rs.getString("nomorTelepon"), rs.getString("alamat")));
             }
-            
+            for(Pelanggan e : listPelanggan) {
+                cbm.addElement(e.getNama());
+            }
         } catch (Exception e) {
             viewDaftarHewan.DipslayMessage(e.getMessage());
         }
+        return cbm;
     }
     
     private DefaultListModel LoadHewanPeliharaanDropDown() {
-        loadtDaftarPelangganDatabase();
         DefaultListModel<String> dlm = new DefaultListModel<>();
         try {
             Database db = new Database();
@@ -80,7 +85,6 @@ public class CtrlDaftarHewan {
                         pemilik = e;
                     }
                 }
-                
                 // Menentukan jenis Hewan
                 if ("Anjing".equals(jenisHewan)) {
                     listHewanPeliharaan.add(new Anjing(id, usia, nama, jenisKelamin, pemilik));
@@ -89,8 +93,11 @@ public class CtrlDaftarHewan {
                 } 
             }
             //add to model view
+            JComboBox cbmPelanggan = viewDaftarHewan.getComboBoxModelPelanggan();
             for (HewanPeliharaan e : listHewanPeliharaan) {
-                dlm.addElement(e.getNama()+"-"+e.getId());
+                if (e.getPemilik().getNama().equals(cbmPelanggan.getSelectedItem())) {
+                    dlm.addElement(e.getNama()+"-"+e.getId());
+                }
             }
         } catch (Exception e) {
             viewDaftarHewan.DipslayMessage(e.getMessage());
@@ -100,6 +107,20 @@ public class CtrlDaftarHewan {
 
     public ArrayList<Pelanggan> getListPelanggan() {
         return listPelanggan;
+    }
+    
+    class DropDownPelangganListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            JComboBox cbmPelanggan = viewDaftarHewan.getComboBoxModelPelanggan();
+            DefaultListModel dlm = new DefaultListModel();
+            for (HewanPeliharaan e : listHewanPeliharaan) {
+                if (cbmPelanggan.getSelectedItem().equals(e.getPemilik().getNama())) {
+                    dlm.addElement(e.getNama()+"-"+e.getId());
+                }
+            }
+            viewDaftarHewan.setHewanList(dlm);
+        }
     }
     
     class DetailHewanPeliharaanMouseAdapter extends MouseAdapter{
@@ -139,6 +160,7 @@ public class CtrlDaftarHewan {
                 CtrlDaftarHewan daftarHewan = new CtrlDaftarHewan();
                 viewDaftarHewan.dispose();
             } catch (Exception e) {
+                viewDaftarHewan.DipslayMessage(e.getMessage());
             }
         }
     }

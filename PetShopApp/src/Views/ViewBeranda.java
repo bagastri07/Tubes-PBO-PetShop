@@ -151,6 +151,10 @@ public class ViewBeranda extends javax.swing.JFrame {
         btnReportPenjualan.addActionListener(listener);
     }
     
+    public void addActionMenuPenitipan(ActionListener listener) {
+        btnPenitipan.addActionListener(listener);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGrooming;
     private javax.swing.JButton btnKeluar;

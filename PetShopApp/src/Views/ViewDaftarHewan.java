@@ -7,6 +7,8 @@ package Views;
 
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
@@ -43,6 +45,7 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
         labelNama = new javax.swing.JLabel();
         labelJenisKelamin = new javax.swing.JLabel();
         labelPemilik = new javax.swing.JLabel();
+        cbmPelanggan = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,13 +73,17 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
         labelPemilik.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         labelPemilik.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        cbmPelanggan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                    .addComponent(cbmPelanggan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -96,12 +103,13 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnKembali)
+                    .addComponent(btnTambah)
+                    .addComponent(cbmPelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnKembali)
-                            .addComponent(btnTambah))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnHapus)
                         .addGap(22, 22, 22)
                         .addComponent(labelNama)
@@ -113,7 +121,7 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
                         .addComponent(labelUsia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelPemilik))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -202,11 +210,23 @@ public class ViewDaftarHewan extends javax.swing.JFrame {
     public void addMouseListHewanPeliharaan(MouseAdapter mouse) {
         listHewan.addMouseListener(mouse);
     }
-
+    
+    public void setPelangganDropDown(DefaultComboBoxModel cbm) {
+        cbmPelanggan.setModel(cbm);
+    }
+    
+    public void addActionDropDownPelanggan(ActionListener listener) {
+        cbmPelanggan.addActionListener(listener);
+    }
+    
+    public JComboBox getComboBoxModelPelanggan() {
+        return cbmPelanggan;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnKembali;
     private javax.swing.JButton btnTambah;
+    private javax.swing.JComboBox<String> cbmPelanggan;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelJenisHewan;
     private javax.swing.JLabel labelJenisKelamin;

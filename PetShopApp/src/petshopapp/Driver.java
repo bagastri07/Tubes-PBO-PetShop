@@ -20,9 +20,6 @@ public class Driver {
     public static void main(String[] args) throws SQLException {
         // TODO code application logic here        
         CtrlLogin controlLogin = new CtrlLogin();
-        
-        double a = 33.22;
-        System.out.println(String.format("%f", a));
     }
     
 }

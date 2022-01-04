@@ -5,6 +5,10 @@
  */
 package Views;
 
+import java.awt.event.ActionListener;
+import javax.swing.ComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Farrel
@@ -31,11 +35,11 @@ public class ViewMenuPenitipan extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
         btnKembali = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        dropDownHewan = new javax.swing.JComboBox<>();
+        cbmPelanggan = new javax.swing.JComboBox<>();
+        cbmHewan = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        fieldLamaPenitipan = new javax.swing.JPasswordField();
+        cbmLamaPenitipan = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,18 +51,26 @@ public class ViewMenuPenitipan extends javax.swing.JFrame {
 
         btnKembali.setText("Kembali");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbmPelanggan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        dropDownHewan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anjing", "Kucing" }));
+        cbmHewan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anjing", "Kucing" }));
 
         jLabel3.setText("Layanan Penitipan");
 
         jLabel4.setText("Lama Penitipan");
 
+        cbmLamaPenitipan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Hari", "2 Hari", "3 Hari", "4 Hari", "5 Hari", "6 Hari", "7 Hari", "8 Hari", "9 Hari", "10 Hari" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 91, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,16 +85,10 @@ public class ViewMenuPenitipan extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dropDownHewan, 0, 248, Short.MAX_VALUE)
-                            .addComponent(fieldLamaPenitipan))
+                            .addComponent(cbmPelanggan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbmHewan, 0, 248, Short.MAX_VALUE)
+                            .addComponent(cbmLamaPenitipan, 0, 248, Short.MAX_VALUE))
                         .addGap(33, 33, 33))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,16 +98,16 @@ public class ViewMenuPenitipan extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbmPelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dropDownHewan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbmHewan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(fieldLamaPenitipan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                    .addComponent(cbmLamaPenitipan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmit)
                     .addComponent(btnKembali))
@@ -145,13 +151,52 @@ public class ViewMenuPenitipan extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void addActionKembali(ActionListener listener) {
+        btnKembali.addActionListener(listener);
+    }
+    
+    public void addActionSubmit(ActionListener listener) {
+        btnSubmit.addActionListener(listener);
+    }
+    
+    public void setPelangganDropDown(ComboBoxModel cbm){
+        cbmPelanggan.setModel(cbm);
+    }
+    
+    public void setHewanPeliharaanDropDown(ComboBoxModel cbm) {
+        cbmHewan.setModel(cbm);
+    }
+    
+    public int getIdPelanggan() {
+        String temp = (String) cbmPelanggan.getSelectedItem();
+        String[] arrTemp = temp.split("-");
+        int idPelanggan = Integer.parseInt(arrTemp[1]);
+        return idPelanggan;
+    }
+    
+    public int getIdHewan() {
+        String temp = (String) cbmHewan.getSelectedItem();
+        String[] arrTemp = temp.split("-");
+        int idHewan = Integer.parseInt(arrTemp[1]);
+        return idHewan;
+    }
+    
+    public void DisplayMessage(String S) {
+        JOptionPane.showMessageDialog(this, S);
+    }
+    
+    public String getLamaPenitipan() {
+        String[] arrStr = ((String) cbmLamaPenitipan.getSelectedItem()).split(" ");
+        return arrStr[0];
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnKembali;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JComboBox<String> dropDownHewan;
-    private javax.swing.JPasswordField fieldLamaPenitipan;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbmHewan;
+    private javax.swing.JComboBox<String> cbmLamaPenitipan;
+    private javax.swing.JComboBox<String> cbmPelanggan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -23,6 +23,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+              <Component id="btnSubmit" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="btnKembali" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
+          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -40,20 +47,13 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jComboBox1" max="32767" attributes="0"/>
-                          <Component id="dropDownHewan" pref="248" max="32767" attributes="0"/>
-                          <Component id="fieldLamaPenitipan" max="32767" attributes="0"/>
+                          <Component id="cbmPelanggan" max="32767" attributes="0"/>
+                          <Component id="cbmHewan" pref="248" max="32767" attributes="0"/>
+                          <Component id="cbmLamaPenitipan" alignment="0" pref="248" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-              <Component id="btnSubmit" min="-2" pref="115" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="btnKembali" min="-2" pref="115" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="91" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,19 +65,19 @@
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmPelanggan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="dropDownHewan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmHewan" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <Component id="fieldLamaPenitipan" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbmLamaPenitipan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnKembali" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,7 +108,7 @@
         <Property name="text" type="java.lang.String" value="Kembali"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="cbmPelanggan">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -123,7 +123,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="dropDownHewan">
+    <Component class="javax.swing.JComboBox" name="cbmHewan">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
@@ -146,7 +146,26 @@
         <Property name="text" type="java.lang.String" value="Lama Penitipan"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="fieldLamaPenitipan">
+    <Component class="javax.swing.JComboBox" name="cbmLamaPenitipan">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="10">
+            <StringItem index="0" value="1 Hari"/>
+            <StringItem index="1" value="2 Hari"/>
+            <StringItem index="2" value="3 Hari"/>
+            <StringItem index="3" value="4 Hari"/>
+            <StringItem index="4" value="5 Hari"/>
+            <StringItem index="5" value="6 Hari"/>
+            <StringItem index="6" value="7 Hari"/>
+            <StringItem index="7" value="8 Hari"/>
+            <StringItem index="8" value="9 Hari"/>
+            <StringItem index="9" value="10 Hari"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

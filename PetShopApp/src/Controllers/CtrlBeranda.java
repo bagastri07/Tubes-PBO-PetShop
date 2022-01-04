@@ -24,6 +24,7 @@ public class CtrlBeranda {
         viewBeranda.addActionGrooming(new MenuGroomingListener());
         viewBeranda.addActionMenuHewan(new MenuDaftarHewanListener());
         viewBeranda.addActionMenuReport(new MenuReportListener());
+        viewBeranda.addActionMenuPenitipan(new MenuPenitipan());
         
         viewBeranda.setVisible(true);
         viewBeranda.setLocationRelativeTo(null);
@@ -65,6 +66,14 @@ public class CtrlBeranda {
         @Override
         public void actionPerformed(ActionEvent ae) {
             CtrlMenuReportPenjualan menuPenjualan = new CtrlMenuReportPenjualan();
+            viewBeranda.dispose();
+        }
+     }
+     
+     class MenuPenitipan implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            CtrlMenuPenitipan menuPenitipan = new CtrlMenuPenitipan();
             viewBeranda.dispose();
         }
      }
