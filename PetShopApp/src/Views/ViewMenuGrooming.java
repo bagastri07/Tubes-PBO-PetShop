@@ -5,6 +5,7 @@
  */
 package Views;
 
+import Exeptions.EmptyExeption;
 import java.awt.event.ActionListener;
 import javax.swing.ComboBoxModel;
 import javax.swing.JComboBox;
@@ -187,6 +188,7 @@ public class ViewMenuGrooming extends javax.swing.JFrame {
         String temp = (String) cbmHewan.getSelectedItem();
         String[] arrTemp = temp.split("-");
         int idHewan = Integer.parseInt(arrTemp[1]);
+        
         return idHewan;
     }
     
