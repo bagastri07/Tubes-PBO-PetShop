@@ -28,6 +28,7 @@ public class CtrlMenuPenitipan {
         
         viewPenitipan.addActionKembali(new KembaliListener());
         viewPenitipan.setPelangganDropDown(getDaftarPelanggan());
+        viewPenitipan.addActionDropDownPelanggan(new DropDownPelangganListener());
         viewPenitipan.setHewanPeliharaanDropDown(getDaftarHewanPeliharaanPertama());
         viewPenitipan.addActionSubmit(new SubmitListener());
         
@@ -108,6 +109,29 @@ public class CtrlMenuPenitipan {
                 CtrlTagihanPenitipan tagihanGrooming = new CtrlTagihanPenitipan();
                 tagihanGrooming.setPenitipanModel(hewanPeliharaan, (viewPenitipan.getLamaPenitipan()));
                 viewPenitipan.dispose();
+            } catch (Exception e) {
+                viewPenitipan.DisplayMessage(e.getMessage());
+            }
+        }
+    }
+    
+    class DropDownPelangganListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            
+            DefaultComboBoxModel cbm = new DefaultComboBoxModel();
+            try {
+                int idPelanggan = viewPenitipan.getIdPelanggan();
+                Database db = new Database();
+                String sql = "SELECT * FROM hewan_peliharaan"
+                        + " WHERE id_pelanggan = " + idPelanggan + ";";
+                ResultSet rs = db.getData(sql);
+                while(rs.next()) {
+                    String hewan = rs.getString("nama") + "-" + rs.getInt("id")  + "-" + rs.getString("jenis_hewan");
+                    cbm.addElement(hewan);
+                }
+                
+                viewPenitipan.setHewanPeliharaanDropDown(cbm);
             } catch (Exception e) {
                 viewPenitipan.DisplayMessage(e.getMessage());
             }

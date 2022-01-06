@@ -6,6 +6,8 @@
 package Views;
 
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -185,26 +187,25 @@ public class ViewMenuReportPenjualan extends javax.swing.JFrame {
                         .addGap(45, 45, 45)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(57, 57, 57)
-                                .addComponent(fieldPendapatanMemandikan, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE))
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(498, 498, 498))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(60, 60, 60)
-                                .addComponent(fieldPendapatanKutu, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(78, 78, 78)
-                                .addComponent(fieldPendapatanKuku))))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(482, 482, 482))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(67, 67, 67)
-                        .addComponent(fieldPendapatanPenitipan))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(64, 64, 64)
-                        .addComponent(fieldPendapatanGrooming)))
-                .addGap(142, 142, 142))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fieldPendapatanGrooming)
+                            .addComponent(fieldPendapatanPenitipan, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+                            .addComponent(fieldPendapatanKuku, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+                            .addComponent(fieldPendapatanKutu, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+                            .addComponent(fieldPendapatanMemandikan, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE))))
+                .addGap(107, 107, 107))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,23 +308,23 @@ public class ViewMenuReportPenjualan extends javax.swing.JFrame {
     }
     
     public void setPendapatanGrooming(String pendapatan) {
-        fieldPendapatanGrooming.setText("Rp. " + pendapatan);
+        fieldPendapatanGrooming.setText(convertToRupiah(pendapatan));
     }
     
     public void setPendapatanPenitipan(String pendapatan) {
-        fieldPendapatanPenitipan.setText("Rp. " + pendapatan);
+        fieldPendapatanPenitipan.setText(convertToRupiah(pendapatan));
     }
     
     public void setPendapatanMemandikanHewan(String pendapatan) {
-        fieldPendapatanMemandikan.setText("Rp. " + pendapatan);
+        fieldPendapatanMemandikan.setText(convertToRupiah(pendapatan));
     }
     
     public void setPendapatanMembersihkanKutu(String pendapatan) {
-        fieldPendapatanKutu.setText("Rp. " + pendapatan);
+        fieldPendapatanKutu.setText(convertToRupiah(pendapatan));
     }
     
     public void setPendaptanMemotongKuku(String pendapatan) {
-        fieldPendapatanKuku.setText("Rp. " + pendapatan);
+        fieldPendapatanKuku.setText(convertToRupiah(pendapatan));
     }
     
     public void DisplayMessage(String S) {
@@ -336,6 +337,20 @@ public class ViewMenuReportPenjualan extends javax.swing.JFrame {
     
     public void setTabelPenitipan(DefaultTableModel tm) {
         tablePenitipan.setModel(tm);
+    }
+    
+    private String convertToRupiah(String jumlah) {
+        double harga = Double.valueOf(jumlah);
+        
+        DecimalFormat kursIndonesia = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+        DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
+
+        formatRp.setCurrencySymbol("Rp. ");
+        formatRp.setMonetaryDecimalSeparator(',');
+        formatRp.setGroupingSeparator('.');
+
+        kursIndonesia.setDecimalFormatSymbols(formatRp);
+        return kursIndonesia.format(harga);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

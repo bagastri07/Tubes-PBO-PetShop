@@ -171,7 +171,12 @@ public class ViewMenuPenitipan extends javax.swing.JFrame {
         String temp = (String) cbmPelanggan.getSelectedItem();
         String[] arrTemp = temp.split("-");
         int idPelanggan = Integer.parseInt(arrTemp[1]);
+        System.out.println(idPelanggan);
         return idPelanggan;
+    }
+    
+    public void addActionDropDownPelanggan(ActionListener listener) {
+       cbmPelanggan.addActionListener(listener);
     }
     
     public int getIdHewan() {
