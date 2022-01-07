@@ -24,15 +24,7 @@ public class Pelanggan {
         this.id = id;
     }
 
-    public void setNama(String nama) throws Exception{
-        if (nama == "") {
-            throw new Exception() {
-                @Override
-                public String getMessage() {
-                    return "Tidak Boleh Kosong";
-                }
-            };
-        }
+    public void setNama(String nama){
         this.nama = nama;
     }
 
