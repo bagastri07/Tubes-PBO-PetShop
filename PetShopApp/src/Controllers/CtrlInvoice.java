@@ -30,7 +30,7 @@ public class CtrlInvoice {
         
         viewInvoice.setVisible(true);
         viewInvoice.setLocationRelativeTo(null);
-        viewInvoice.setTitle("Tagihan Grooming");        
+        viewInvoice.setTitle("Invoice");        
     }
     
     public  void setLayananModel(Layanan layanan, String metodePembayaran) {

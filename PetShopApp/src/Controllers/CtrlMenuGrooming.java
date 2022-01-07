@@ -74,7 +74,7 @@ public class CtrlMenuGrooming {
     class KembaliListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            CtrlBeranda menuPelanngan = new CtrlBeranda();
+            CtrlBeranda beranda = new CtrlBeranda();
             viewGrooming.dispose();
         }   
     }
